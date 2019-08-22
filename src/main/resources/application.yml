@@ -1,4 +1,3 @@
-
 spring:
   application:
     name: config
@@ -9,6 +8,14 @@ spring:
           uri: https://github.com/happybz/SpringCloud_Sell-config_repo.git
           username: happy_bz@qq.com
           password: 1120bzbz
+    bus:
+      refresh:
+        enabled: true
+  rabbitmq:
+    host: 192.168.99.100
+    port: 5672
+    username: guest
+    password: guest
 eureka:
   client:
     service-url:
@@ -16,4 +23,5 @@ eureka:
 management:
   endpoints:
     web:
-      expose: "*"
+      exposure:
+        include: bus-refresh
